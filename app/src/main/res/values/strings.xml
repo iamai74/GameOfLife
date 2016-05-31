@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">GameLife</string>
+    <string name="clear">Clear</string>
+    <string name="start_stop">Start/stop</string>
+    <string name="help">\'?\'</string>
 </resources>

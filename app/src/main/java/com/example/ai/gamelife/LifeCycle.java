@@ -29,6 +29,9 @@ public class LifeCycle {
     public void setItem(int item, int id) {
         this.array[id] = item;
     }
+    private void setNewItem(int item, int id) {
+        this.newArray[id] = item;
+    }
 
     public void setNewStartArray(boolean rand) {
         int num;
@@ -196,5 +199,19 @@ public class LifeCycle {
             count++;
         }
         return count;
+    }
+
+    public void newCycle()
+    {
+        int i;
+        for (i=0; i<this.size*this.size; i++)
+        {
+           if (this.checkElement(i)==3) {
+               this.setNewItem(1,i);
+           }else {
+               this.setNewItem(0,i);
+           }
+        }
+        this.array = this.newArray;
     }
 }

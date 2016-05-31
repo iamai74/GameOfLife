@@ -2,10 +2,13 @@ package com.example.ai.gamelife;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.GridView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -13,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
     LifeCycle cycle;
     GridView gvMain;
     ArrayAdapter<Integer> adapter;
+    Button clearButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +27,8 @@ public class MainActivity extends AppCompatActivity {
         cycle.setNewStartArray(false);
         adapter = new ArrayAdapter<Integer>(this, R.layout.item, R.id.tvText, cycle.getArray());
         gvMain = (GridView) findViewById(R.id.sandBox);
+        clearButton = (Button) findViewById(R.id.clearAllButton);
+        Log.i("123", "456");
         gvMain.setAdapter(adapter);
 
         gvMain.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -33,5 +39,6 @@ public class MainActivity extends AppCompatActivity {
                 cell.setBackgroundColor(cycle.getColor(i));
             }
         });
+
     }
 }
